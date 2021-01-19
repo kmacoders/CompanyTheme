@@ -4,11 +4,10 @@ const path = require('path')
 module.exports = {
   mode: 'development',
   entry: [
-    './src/scripts/index.js',
-    './src/styles/main.scss'
+    './src/scripts/index.js'
   ],
   output: {
-    filename: 'kmacoders-script.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist/assets')
   },
   module: {
@@ -59,11 +58,6 @@ module.exports = {
     ]
   },
   watch: true,
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
-  },
   resolve: {
     extensions: ['.wasm', '.mjs', '.js', '.json']
   }

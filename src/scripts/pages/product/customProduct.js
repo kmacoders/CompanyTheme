@@ -1,4 +1,5 @@
 if ( document.querySelector('.product-custom')) {
+  console.log('sfs')
   const productCustom = new Vue({
     delimiters: ['${', '}'],
     el: '.product-custom',
@@ -11,8 +12,8 @@ if ( document.querySelector('.product-custom')) {
       console.log(productHandle);
       
       this.getDataJson();
-      // console.log(this.dataJson);
-      // console.log('asfsf')
+      console.log(this.dataJson);
+      console.log('asfsf')
     },
     methods: {
       async getDataJson() {
@@ -22,3 +23,5 @@ if ( document.querySelector('.product-custom')) {
     }
   })
 }
+
+console.log('safsf')
