@@ -1,18 +1,59 @@
 <div class="product-custom">
   <div class="container">
-    <div class="row">
+    <div class="row p-5">
       <div class="col-6">
         <div class="img-container">
-          <img src="">
+          <img v-bind:src="featureImage">
         </div>
       </div>
       <div class="col-6">
-        
+        <div class="product-info">
+          <div class="product-title mt-5">
+            <span class="h1">${productTitle}</span>
+          </div>
+          <div class="product-price mt-5 mb-5">
+            <span class="h5">${productPrice | moneyFomat}</span>
+          </div>
+          <div class="product-description">
+            <div v-html="productDescription"></div>
+          </div>
+
+          <form class="mt-5" v-on:submit.prevent="addToCart">
+            <div class="form-group">
+              <select 
+                class="custom-select custom-select-lg mb-3" 
+                id="product-variant"
+                v-model="formData.id"
+              >
+                <option 
+                  v-for="(variant, index) in productVariants"
+                  :key="index"
+                  :value="variant.id"
+                >
+                  ${variant.title}
+                </option>
+              </select>
+            </div>
+            
+            <div class="d-flex align-items-center">
+              <div class="w-25">
+                <div class="d-flex align-items-center input-group input-group-lg">
+                  <input v-model.number="formData.quantity" type="number" class="form-control" id="product-quantity">
+                </div>
+              </div>
+              <div class="w-75 ml-3">
+                <button type="submit" class="btn btn-primary btn-lg w-100">Submit</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
       </div>
     </div>
   </div>
-
-  <script type="text/javascript">
-    var productHandle = '{{product.handle}}';
-  </script>
 </div>
+
+<script type="text/javascript">
+  var productHandle = '{{product.handle}}';
+</script>
+
