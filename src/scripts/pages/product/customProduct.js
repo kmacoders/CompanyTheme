@@ -1,3 +1,12 @@
+Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">{{ count }}</button>'
+})
+
 if (document.querySelector('.product-custom')) {
   console.log('sfs')
   const productCustom = new Vue({
@@ -26,7 +35,7 @@ if (document.querySelector('.product-custom')) {
     },
 
     filters: {
-      moneyFomat(value, sign = 'VND') {
+      moneyFormat(value, sign = 'VND') {
         if (!value) return 0;
         return `${sign} ${(value / 100).toFixed(2)} `;
       }

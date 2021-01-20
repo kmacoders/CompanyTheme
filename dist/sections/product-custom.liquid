@@ -12,7 +12,7 @@
             <span class="h1">${productTitle}</span>
           </div>
           <div class="product-price mt-5 mb-5">
-            <span class="h5">${productPrice | moneyFomat}</span>
+            <span class="h5">${productPrice | moneyFormat}</span>
           </div>
           <div class="product-description">
             <div v-html="productDescription"></div>
@@ -55,5 +55,6 @@
 
 <script type="text/javascript">
   var productHandle = '{{product.handle}}';
+  var productDetail = {{product | json}};
 </script>
 
