@@ -1,10 +1,12 @@
-const path = require('path')
+const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 // Eslint
 module.exports = {
   mode: 'development',
   entry: [
-    './src/scripts/index.js'
+    './src/scripts/index.js',
+    './src/styles/main.scss'
   ],
   output: {
     filename: '[name].js',
@@ -23,6 +25,10 @@ module.exports = {
             plugins: ['@babel/plugin-transform-runtime']
           }
         }
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       },
       // Url loader: Base64 image
       {
@@ -57,10 +63,11 @@ module.exports = {
 			}
     ]
   },
+  plugins: [
+    new VueLoaderPlugin()
+  ],
   watch: true,
   resolve: {
     extensions: ['.wasm', '.mjs', '.js', '.json']
   }
 }
-
-

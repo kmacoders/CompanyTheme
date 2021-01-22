@@ -1,3 +1,5 @@
+import Test from './test.vue';
+
 Vue.component('button-counter', {
   data: function () {
     return {
@@ -12,6 +14,9 @@ if (document.querySelector('.product-custom')) {
   const productCustom = new Vue({
     delimiters: ['${', '}'],
     el: '.product-custom',
+    components: {
+      Test
+    },
     data() {
       return {
         dataJson: undefined,
