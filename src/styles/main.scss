@@ -1,6 +1,10 @@
 /// File này chỉ import
 /// Không viết vào đây
 /// Thiếu structure gì cứ tự bổ sung
+///Tailwinds
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /// Base
 @import './base/reset';

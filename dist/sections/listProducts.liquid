@@ -1,10 +1,7 @@
-<div class="list-products">
-  <h1>Collection List</h1>
-  <button-counter></button-counter>
-  <h1>Collection {{section.settings.collection}}</h1>
-  {% for product in collections[section.settings.collection].products %}
-    <p>{{product.title}}</p>
-  {% endfor %}
+<div class="xo-list-products container mx-auto">
+  <h1 class="text-center">Collection {{section.settings.collection}}</h1>
+  <!-- Render products list  -->
+  <Products :products="products" ></Products>
 </div>
 
 <script type="text/javascript">

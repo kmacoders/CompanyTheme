@@ -21,5 +21,11 @@
 <script>
 export default {
   props: ['products'],
+  filters: {
+    moneyFormat(value, sign = 'VND') {
+      if (!value) return 0;
+      return `${sign} ${(value / 100).toFixed(2)} `;
+    }
+  },
 }
 </script>
