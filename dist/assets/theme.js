@@ -1753,7 +1753,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /**
        * Make sure the quantity does not go below when manually changed
        */
-
+      
     }, {
       key: '_validateQuantity',
       value: function _validateQuantity(event, target) {

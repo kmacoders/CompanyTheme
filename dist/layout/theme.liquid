@@ -175,6 +175,12 @@
       {% section 'announcement' %}
       {% section 'header' %}
 
+      {% if customer %}
+        <h1>Customer log in</h1>
+        <h1>{{customer.name}}</h1>
+      {% else %}
+        <h1>Customer log out</h1>
+      {% endif %}
       <main id="main" role="main">
         {{ content_for_layout }}
       </main>

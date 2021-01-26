@@ -17,6 +17,7 @@ if (document.querySelector('.product-custom')) {
     components: {
       Test
     },
+    
     data() {
       return {
         dataJson: undefined,
@@ -100,12 +101,20 @@ if (document.querySelector('.product-custom')) {
           )
         })
           .then(response => {
-            location.reload();
+            this.handleDrawer();
             return response.json();
           })
           .catch((error) => {
             console.error('Error:', error);
           });
+      },
+
+      async handleDrawer() {
+        const jsonData = await fetch(`/cart.js`);
+        if (!jsonData.ok) throw new Error(`Bad response from server`);
+
+        const cartJson = await jsonData.json();
+        console.log(`So item trong cart la: ${cartJson.items.length}`);
       }
     }
   })
